@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="../stylesheets/style.css"> <!-- Link to the CSS file -->
+</head>
+
+<body>
+
+<div class="fcf-body">
+    <div id="fcf-form">
+        <h3 class="fcf-h3">Register</h3>
+        <form id="fcf-form-id" class="fcf-form-class" method="post" action="/auth/register/submit">
+            <div class="fcf-form-group">
+                <label for="Name" class="fcf-label">Your name</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                </div>
+            </div>
+
+            <div class="fcf-form-group">
+                <label for="Email" class="fcf-label">Your email address</label>
+                <div class="fcf-input-group">
+                    <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                </div>
+            </div>
+
+            <div class="fcf-form-group">
+                <label for="Password" class="fcf-label">Password</label>
+                <div class="fcf-input-group">
+                    <input type="password" id="Password" name="password" class="fcf-form-control" required>
+                </div>
+            </div>
+
+            <div class="fcf-form-group">
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
