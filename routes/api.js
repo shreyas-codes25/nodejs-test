@@ -20,7 +20,7 @@ router.get('/products', (req, res) => {
   const limit = parseInt(req.query.limit) || 10;
   const offset = (page - 1) * limit;
 
-  const { sortBy, order, minPrice, maxPrice, rating } = req.query;
+  const {category, sortBy, order, minPrice, maxPrice, rating } = req.query;
 
   let query = 'SELECT * FROM products WHERE 1=1';
   let params = [];
@@ -39,6 +39,10 @@ router.get('/products', (req, res) => {
       params.push(rating);
   }
 
+  if (category) {
+    query += ` AND category = ? `;
+    params.push(category);
+    }
   // Sorting
   if (sortBy) {
       query += ` ORDER BY ${sortBy}`;
@@ -46,7 +50,6 @@ router.get('/products', (req, res) => {
           query += ` ${order}`;
       }
   }
-
   // Pagination
   query += ' LIMIT ? OFFSET ?';
   params.push(limit, offset);
